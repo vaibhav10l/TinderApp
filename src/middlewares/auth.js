@@ -11,7 +11,6 @@ const {_id} = decodedData;
 const user = await User.findById(_id);
 if(!user) throw new Error("User Not FOUND>>>")
     req.user = user;
-console.log("user++++",user)
     next();
 }catch(err){
 res.status(400).send("ERROR::::"+err.message)
